@@ -1,0 +1,20 @@
+
+
+header > * {
+  text-align: center;
+  margin-top: 20px;
+}
+header h4 {
+  font-weight: lighter;
+}
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.mail-form-control {
+  max-width: 500px;
+  margin: 30px auto;
+}
