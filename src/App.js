@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 
+import swal from '@sweetalert/with-react';
+
 
 //import LoadingOverlay from 'react-loading-overlay';
 import LoadingOverlay from '@ronchalant/react-loading-overlay';
@@ -62,16 +64,24 @@ const App = () => {
       }).then((res) => res.json()).then( async (res) => {
         //console.log("res", res);
         if (res.status) {
-          alert(res.message);
+          //alert(res.message);
+          
+          swal(`${res.message} to: ${site.customer_email}!`, { icon: "success" });
+          setReason('')
+          setSite({ site_name: "", customer_name: "", customer_email: "" });
         }
         setOverlayActive(false);
         setOverlayText('');
       }).catch((error) => {
         console.log("Error: ", error);
+        
+        swal(`An error occor, please try again`, { icon: "error" });
         setOverlayActive(false);
       });
     } else {
-      alert("All fields are required.");
+      //alert("All fields are required.");
+      
+      swal(`All fields are required.`, { icon: "error" });
     }
   }
   
