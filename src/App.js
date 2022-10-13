@@ -50,7 +50,7 @@ const App = () => {
   }
 
   const sendEmail = () => {
-    const payload = { name: site.customer_name, email: site.customer_email, reason };
+    const payload = { site_name: site.site_name, name: site.customer_name, email: site.customer_email, reason };
 
     if (site.customer_name.length && site.customer_email.length && reason.length) {
 
